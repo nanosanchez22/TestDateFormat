@@ -26,9 +26,26 @@ public class DateFormatterTests
 
     }
     [Test]
+    public void FechaIncorrecta2(){
+        const string expected = "Wrong format, try dd/mm/yyyy";
+        const string prueba = "10111997";
+        Assert.That(TestDateFormat.DateFormatter.ChangeFormat(prueba), Is.EqualTo(expected));
+
+
+    }
+
+    [Test]
+    public void FechaVacia(){
+        const string expected = "";
+        const string prueba = "";
+        Assert.That(TestDateFormat.DateFormatter.ChangeFormat(prueba), Is.EqualTo(expected));
+
+
+    }
+/*     [Test]
     public void FechaEnBlanco(){
         const string prueba = "";
         Assert.Throws<ArgumentOutOfRangeException>(() => TestDateFormat.DateFormatter.ChangeFormat(prueba));
-    } 
+    }  */
 
 }
