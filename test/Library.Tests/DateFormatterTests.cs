@@ -13,7 +13,6 @@ public class DateFormatterTests
     public void FechaCorrecta(){
         const string expected = "1997-11-10";
         const string prueba = "10/11/1997";
-        DateFormatterTests dateFormatterTests= new DateFormatterTests();
         Assert.That(TestDateFormat.DateFormatter.ChangeFormat(prueba), Is.EqualTo(expected));
         
 
@@ -22,7 +21,6 @@ public class DateFormatterTests
     public void FechaIncorrecta(){
         const string expected = "1997-11-10";
         const string prueba = "10111997";
-        DateFormatterTests dateFormatterTests= new DateFormatterTests();
         Assert.That(TestDateFormat.DateFormatter.ChangeFormat(prueba), Is.Not.EqualTo(expected));
 
 
@@ -30,7 +28,6 @@ public class DateFormatterTests
     [Test]
     public void FechaEnBlanco(){
         const string prueba = "";
-        DateFormatterTests dateFormatterTests= new DateFormatterTests();
         Assert.Throws<ArgumentOutOfRangeException>(() => TestDateFormat.DateFormatter.ChangeFormat(prueba));
     } 
 
